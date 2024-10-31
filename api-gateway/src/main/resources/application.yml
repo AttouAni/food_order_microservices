@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+ port: 8090
+ 
+eureka:
+ client:
+   service-url:
+    defaultZone: http://localhost:8761/eureka
+    
+zuul:
+ routes:
+  Ordre:
+   path: /api1/**
+   service-id: Ordre
+  Kitchen:
+   path: /api2/**
+   service-id: Kitchen
+  Restaurant:
+   path: /api3/**
+   service-id: Restaurant
+  Courier:
+   path: /api4/**
+   service-id: Courier
+  Delivery:
+   path: /api5/**
+   service-id: Delivery
+   
+   
+   
